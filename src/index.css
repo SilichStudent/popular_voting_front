@@ -10,10 +10,12 @@ body {
 
 html {
   height: 100%;
-}
-
-* {
   box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 .bg-image {
@@ -30,6 +32,8 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
+  width: 100%;
 }
 
 code {
@@ -43,4 +47,10 @@ code {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.l-wrap {
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
 }
