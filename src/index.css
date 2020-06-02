@@ -49,8 +49,9 @@ code {
   width: 100%;
 }
 
-.l-wrap {
-  max-width: 1140px;
-  margin-right: auto;
-  margin-left: auto;
+
+.three-col-grid::after {
+  display: table;
+  clear: both;
+  content: '';
 }

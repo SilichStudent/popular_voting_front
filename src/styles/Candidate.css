@@ -1,15 +1,7 @@
-.three-col-grid .Candidate {
-  width: 25%;
-  float: left;
-}
-
 .Candidate {
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
   height: 400px;
-}
-
-.three-col-grid::after {
-  display: table;
-  clear: both;
-  content: '';
+  width: 250px;
 }

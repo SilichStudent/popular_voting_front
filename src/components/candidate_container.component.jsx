@@ -21,7 +21,6 @@ export class CandidateContainer extends Component {
   render() {
     return (
       <div className="CandidatesContainer l-wrap">
-        <div className="three-col-grid">
           <Candidate
             src={lukashenko}
             name="Александр Лукашенко"
@@ -92,7 +91,6 @@ export class CandidateContainer extends Component {
             name="Николай Козлов"
             decription="Исполняющий обязанности председателя Объединенной гражданской партии"
           />
-        </div>
       </div>
     );
   }

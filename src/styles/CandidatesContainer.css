@@ -1,2 +1,9 @@
 .CandidatesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1080px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
 }
