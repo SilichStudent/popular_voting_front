@@ -4,6 +4,7 @@ import { loadCandidates } from '../containers/app.container'
 
 import '../styles/App.css';
 import { PicketMap } from './picket_map.component';
+import { Footer } from './footer.component';
 
 export class App extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ export class App extends Component {
           candidates={this.state.candidates}
           selectedCandidates={this.state.selectedCandidates}
         />
+        <Footer/>
       </div>
     );
   }
