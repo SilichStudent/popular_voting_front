@@ -12,6 +12,12 @@
   cursor: pointer;
 }
 
+.sahdddd {
+  background-color: rgb(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 23px lightyellow;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
 @media only screen and (max-width: 600px) {
   .Candidate:hover {
     opacity: 1;
