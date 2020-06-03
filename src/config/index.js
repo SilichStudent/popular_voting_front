@@ -1,0 +1,1 @@
+export const API_ULR = process.env.API_ULR || 'http://localhost:8080/api/v1';

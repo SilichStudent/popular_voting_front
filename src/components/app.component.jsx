@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { CandidateContainer } from './candidate_container.component';
+import { loadCandidates } from '../containers/app.container'
 
 import '../styles/App.css';
 import { PicketMap } from './picket_map.component';
-import response from '../static/response.json';
 
 export class App extends Component {
   constructor(props) {
@@ -11,12 +11,15 @@ export class App extends Component {
     this.state = {
       candidates: [],
       selectedCandidates: [],
+      error: ""
     };
   }
 
   componentDidMount() {
-    Promise.resolve(response).then((r) => {
+    loadCandidates().then((r) => {
       this.setState({ candidates: r });
+    }).catch(err => {
+      this.setState({ error: err });
     });
   }
 
@@ -34,7 +37,15 @@ export class App extends Component {
     }
   };
 
-  render() {
+  render () {
+    if (this.state.error) {
+      return (
+        <div className="Error">
+          ERROR!!!
+          {this.state.error.toString()}
+        </div>
+      )
+    }
     return (
       <div className="App">
         <CandidateContainer
