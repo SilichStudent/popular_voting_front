@@ -8,8 +8,8 @@ export class CandidateContainer extends Component {
   render() {
     return (
       <div className="CandidatesContainer l-wrap">
-        {this.props.users.map(u => {
-          return (<Candidate key={u.id} src={getPhotoByUser(u)} name={u.nameSurname} decription= { u.description }/>)
+        {this.props.candidates.map(candidate => {
+          return (<Candidate key={candidate.id} src={getPhotoByUser(candidate)} name={candidate.nameSurname} decription= { candidate.description }/>)
         })}
       </div>
     );

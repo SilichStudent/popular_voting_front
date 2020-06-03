@@ -10,22 +10,23 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      candidates: [],
+
     }
   }
 
   componentDidMount () {
     Promise.resolve(response)
       .then(r => {
-        this.setState({ users: r })
+        this.setState({ candidates: r })
       })
   }
 
   render () {
     return (
       <div className="App">
-        <CandidateContainer users={this.state.users}/>
-        <PicketMap users={this.state.users}/>
+        <CandidateContainer candidates={this.state.candidates}/>
+        <PicketMap candidates={this.state.candidates}/>
       </div>
     )
   }

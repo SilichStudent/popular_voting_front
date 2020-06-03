@@ -4,4 +4,22 @@
   margin-top: 10px;
   text-align: center;
   width: 250px;
+  opacity: 1;
+}
+
+.Candidate:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .Candidate:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .Candidate {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 }

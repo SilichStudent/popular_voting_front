@@ -11,8 +11,8 @@ export class PicketMap extends Component {
             width="100%"
             height="500px"
           >
-            {this.props.users.map((u) => {
-              return u.coordinates
+            {this.props.candidates.map((candidate) => {
+              return candidate.coordinates
                 .map((c) => {
                   const cord = c.value
                     .split(',')
@@ -20,15 +20,15 @@ export class PicketMap extends Component {
                     .map((co) => parseFloat(co));
                   return (
                     <Placemark
-                      key={`${u.id}_${c.id}`}
+                      key={`${candidate.id}_${c.id}`}
                       geometry={cord}
                       properties={{
-                        balloonContent: `<strong>${u.nameSurname}</strong>, ${c.description}`,
-                        iconCaption: `${u.nameSurname}, ${c.description}`,
+                        balloonContent: `<strong>${candidate.nameSurname}</strong>, ${c.description}`,
+                        iconCaption: `${candidate.nameSurname}`,
                       }}
                       options={{
                         preset: 'islands#icon',
-                        iconColor: '#735184',
+                        iconColor: candidate.color,
                       }}
                       modules={['geoObject.addon.balloon']}
                     />
