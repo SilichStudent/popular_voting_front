@@ -27,3 +27,18 @@
 .App-link {
   color: #61dafb;
 }
+
+.Error {
+  margin: auto;
+  max-width: 500px;
+  width: 95%;
+  border: red;
+  border-style: groove;
+  height: 200px;
+  background-color: white;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}

@@ -41,8 +41,7 @@ export class App extends Component {
     if (this.state.error) {
       return (
         <div className="Error">
-          ERROR!!!
-          {this.state.error.toString()}
+          К сожалению сайт в данный момент не работает
         </div>
       )
     }

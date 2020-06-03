@@ -6,6 +6,10 @@ import '../styles/CandidatesContainer.css';
 
 export class CandidateContainer extends Component {
   render() {
+    if (!this.props.candidates || this.props.candidates.length === 0) {
+      return null;
+    }
+    
     return (
       <div className="CandidatesContainer l-wrap">
         {this.props.candidates.map((candidate) => {

@@ -3,6 +3,10 @@ import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
 export class PicketMap extends Component {
   render() {
+    if (!this.props.candidates || this.props.candidates.length === 0) {
+      return null;
+    }
+
     return (
       <div>
         <YMaps query={{ apikey: 'dc729c6b-ffb0-4455-9e1b-43c5eee8e206' }}>
