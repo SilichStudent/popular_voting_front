@@ -11,31 +11,36 @@ export class PicketMap extends Component {
             width="100%"
             height="500px"
           >
-            {this.props.candidates.map((candidate) => {
-              return candidate.coordinates
-                .map((c) => {
-                  const cord = c.value
-                    .split(',')
-                    .map((co) => co.trim())
-                    .map((co) => parseFloat(co));
-                  return (
-                    <Placemark
-                      key={`${candidate.id}_${c.id}`}
-                      geometry={cord}
-                      properties={{
-                        balloonContent: `<strong>${candidate.nameSurname}</strong>, ${c.description}`,
-                        iconCaption: `${candidate.nameSurname}`,
-                      }}
-                      options={{
-                        preset: 'islands#icon',
-                        iconColor: candidate.color,
-                      }}
-                      modules={['geoObject.addon.balloon']}
-                    />
-                  );
-                })
-                .flat();
-            })}
+            {this.props.candidates
+              .filter(
+                (candidate) =>
+                this.props.selectedCandidates.indexOf(candidate.id) > -1
+              )
+              .map((candidate) => {
+                return candidate.coordinates
+                  .map((c) => {
+                    const cord = c.value
+                      .split(',')
+                      .map((co) => co.trim())
+                      .map((co) => parseFloat(co));
+                    return (
+                      <Placemark
+                        key={`${candidate.id}_${c.id}`}
+                        geometry={cord}
+                        properties={{
+                          balloonContent: `<strong>${candidate.nameSurname}</strong>, ${c.description}`,
+                          iconCaption: `${candidate.nameSurname}`,
+                        }}
+                        options={{
+                          preset: 'islands#icon',
+                          iconColor: candidate.color,
+                        }}
+                        modules={['geoObject.addon.balloon']}
+                      />
+                    );
+                  })
+                  .flat();
+              })}
           </Map>
         </YMaps>
       </div>

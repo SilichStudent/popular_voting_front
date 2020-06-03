@@ -34,7 +34,7 @@ export class App extends Component {
     }
   };
 
-  render () {
+  render() {
     return (
       <div className="App">
         <CandidateContainer
@@ -42,7 +42,10 @@ export class App extends Component {
           selectedCandidates={this.state.selectedCandidates}
           selectCandidate={this.selectCandidate}
         />
-        <PicketMap candidates={this.state.candidates} />
+        <PicketMap
+          candidates={this.state.candidates}
+          selectedCandidates={this.state.selectedCandidates}
+        />
       </div>
     );
   }
