@@ -1,1 +1,1 @@
-export const API_ULR = process.env.API_ULR || 'http://localhost:8080/api/v1';
+export const API_ULR = process.env.API_ULR || 'http://back.picketinfo.by/api/v1';
