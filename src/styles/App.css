@@ -42,3 +42,13 @@
   display: flex;
   text-align: center;
 }
+
+.Header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.HeaderInfo {
+  width: 90%;
+  margin: auto;
+}

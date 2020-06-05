@@ -18,7 +18,7 @@ export class PicketMap extends Component {
             {this.props.candidates
               .filter(
                 (candidate) =>
-                this.props.selectedCandidates.length === 0 || this.props.selectedCandidates.indexOf(candidate.id) > -1
+                  this.props.selectedCandidates.indexOf(candidate.id) > -1
               )
               .map((candidate) => {
                 return candidate.coordinates

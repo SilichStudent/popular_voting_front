@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CandidateContainer } from './candidate_container.component';
-import { loadCandidates } from '../containers/app.container'
+import { loadCandidates } from '../containers/app.container';
 
 import '../styles/App.css';
 import { PicketMap } from './picket_map.component';
@@ -12,16 +12,18 @@ export class App extends Component {
     this.state = {
       candidates: [],
       selectedCandidates: [],
-      error: ""
+      error: '',
     };
   }
 
   componentDidMount() {
-    loadCandidates().then((r) => {
-      this.setState({ candidates: r });
-    }).catch(err => {
-      this.setState({ error: err });
-    });
+    loadCandidates()
+      .then((r) => {
+        this.setState({ candidates: r });
+      })
+      .catch((err) => {
+        this.setState({ error: err });
+      });
   }
 
   selectCandidate = (id) => {
@@ -38,16 +40,24 @@ export class App extends Component {
     }
   };
 
-  render () {
+  render() {
     if (this.state.error) {
       return (
         <div className="Error">
           К сожалению сайт в данный момент не работает
         </div>
-      )
+      );
     }
     return (
       <div className="App">
+        <div className="Header">
+          <h1>ИНФОРМАЦИЯ О ПИКЕТАХ</h1>
+          <div className="HeaderInfo">
+            информация взята из открытых источников. Чтобы показать только
+            одного или нескольких конкретных кандидатов - нажмите на их
+            фотографию. Для связи пишите на почту внизу страницы
+          </div>
+        </div>
         <CandidateContainer
           candidates={this.state.candidates}
           selectedCandidates={this.state.selectedCandidates}
@@ -57,7 +67,7 @@ export class App extends Component {
           candidates={this.state.candidates}
           selectedCandidates={this.state.selectedCandidates}
         />
-        <Footer/>
+        <Footer />
       </div>
     );
   }
