@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CandidateContainer } from './candidate_container.component';
 import { loadCandidates } from '../containers/app.container';
+import { updateSelectedCondidates } from '../common/point-storage'
 
 import '../styles/App.css';
 import { PicketMap } from './picket_map.component';
@@ -12,7 +13,7 @@ export class App extends Component {
     this.state = {
       candidates: [],
       selectedCandidates: [],
-      error: '',
+      error: ''
     };
   }
 
@@ -24,6 +25,11 @@ export class App extends Component {
       .catch((err) => {
         this.setState({ error: err });
       });
+  }
+
+  componentDidUpdate () {
+    updateSelectedCondidates(this.state.selectedCandidates);
+    return true;
   }
 
   selectCandidate = (id) => {
@@ -66,6 +72,7 @@ export class App extends Component {
         <PicketMap
           candidates={this.state.candidates}
           selectedCandidates={this.state.selectedCandidates}
+          visible={this.state.visible}
         />
         <Footer />
       </div>
