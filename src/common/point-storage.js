@@ -49,8 +49,6 @@ export const initCandidatesObjects = (candidates) => {
 };
 
 export const updateSelectedCondidates = (selectedCandidates) => {
-  console.log(candidatesObjects);
-  
   Object.entries(candidatesObjects).forEach(([key, vals]) => {
     if (selectedCandidates.indexOf(parseInt(key)) > -1) {
       vals.forEach((val) => {
