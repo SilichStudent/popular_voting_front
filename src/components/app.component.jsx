@@ -27,25 +27,20 @@ export class App extends Component {
       });
   }
 
-  componentDidUpdate () {
-    updateSelectedCondidates(this.state.selectedCandidates);
-    return true;
-  }
-
-  componentWillUpdate () {
-    return false;
-  }
-
   selectCandidate = (id) => {
     if (this.state.selectedCandidates.indexOf(id) > -1) {
       this.setState({
         selectedCandidates: this.state.selectedCandidates.filter(
           (sc) => sc !== id
         ),
+      }, () => {
+        updateSelectedCondidates(this.state.selectedCandidates)
       });
     } else {
       this.setState({
         selectedCandidates: this.state.selectedCandidates.concat(id),
+      }, () => {
+        updateSelectedCondidates(this.state.selectedCandidates)
       });
     }
   };
