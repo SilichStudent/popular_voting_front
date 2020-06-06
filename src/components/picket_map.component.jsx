@@ -6,7 +6,10 @@ export class PicketMap extends Component {
     window.addEventListener('load', this.handleLoad);
   }
 
-  componentWillUpdate() {
+  shouldComponentUpdate () {
+    if (!this.props.candidates || this.props.candidates.length === 0) {
+      return true;
+    }
     return false;
   }
 
@@ -20,6 +23,9 @@ export class PicketMap extends Component {
     if (!this.props.candidates || this.props.candidates.length === 0) {
       return null;
     }
+
+    console.log("asdsadasd");
+    
 
     return <div id="map"></div>;
   }

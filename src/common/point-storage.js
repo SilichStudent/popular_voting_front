@@ -1,8 +1,8 @@
 const candidatesObjects = {};
 let map = null;
 
-export const initCandidatesObjects = (candidates, block) => {
-  window.ymaps.ready(() => {
+export const initCandidatesObjects = (candidates) => {
+  window.ymaps.ready(async () => {
     candidates.forEach((candidate) => {
       const plsmks = candidate.coordinates.map((c) => {
         const cord = c.value
@@ -24,6 +24,10 @@ export const initCandidatesObjects = (candidates, block) => {
       });
       candidatesObjects[candidate.id] = plsmks;
     });
+
+    while (!document.getElementById('map')) {
+      await new Promise(r => setTimeout(r, 200));
+    }
 
     map = new window.ymaps.Map(
       'map',

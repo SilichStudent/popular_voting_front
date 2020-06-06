@@ -32,6 +32,10 @@ export class App extends Component {
     return true;
   }
 
+  componentWillUpdate () {
+    return false;
+  }
+
   selectCandidate = (id) => {
     if (this.state.selectedCandidates.indexOf(id) > -1) {
       this.setState({
@@ -46,7 +50,10 @@ export class App extends Component {
     }
   };
 
-  render() {
+  render () {
+    console.log("app ");
+    
+
     if (this.state.error) {
       return (
         <div className="Error">
