@@ -46,9 +46,6 @@ export class App extends Component {
   };
 
   render () {
-    console.log("app ");
-    
-
     if (this.state.error) {
       return (
         <div className="Error">

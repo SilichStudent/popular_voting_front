@@ -24,9 +24,6 @@ export class PicketMap extends Component {
       return null;
     }
 
-    console.log("asdsadasd");
-    
-
     return <div id="map"></div>;
   }
 }
