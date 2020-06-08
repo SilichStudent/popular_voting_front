@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://picketinfo.by/robots.txt
+Sitemap: https://picketinfo.by/sitemap.xml
